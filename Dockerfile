@@ -1,4 +1,4 @@
-FROM elasticsearch:5
+FROM elasticsearch
 
 RUN bin/elasticsearch-plugin install x-pack --batch
 
