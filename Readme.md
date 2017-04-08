@@ -20,7 +20,7 @@ docker run --name es-xpack -d danielguerra/elasticsearch-x-pack
 
 Optional start kibana x-pack
 ```bash
-docker run --link es-xpack:elasticsearch --name kb-xpack -d danielguerra/kibana-x-pack
+docker run -p 5601:5601 --link es-xpack:elasticsearch --name kb-xpack -d danielguerra/kibana-x-pack
 ```
 login with
 user: elastic
