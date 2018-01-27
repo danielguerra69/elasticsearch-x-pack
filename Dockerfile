@@ -3,10 +3,8 @@ MAINTAINER Daniel Guerra <daniel.guerra69@gmail.com>
 
 USER root
 RUN /usr/share/java/elasticsearch/bin/elasticsearch-plugin install x-pack --batch
-
-VOLUME ["/usr/share/java/elasticsearch/plugins"]
-VOLUME ["/usr/share/java/elasticsearch/config"]
-VOLUME ["/usr/share/java/elasticsearch/data"]
+ADD elasticsearch.yml /usr/share/java/elasticsearch/config/elasticsearch.yml
+VOLUME ["/usr/share/java/elasticsearch/plugins","/usr/share/java/elasticsearch/config","/usr/share/java/elasticsearch/data","/dump"]
 EXPOSE 9200 9300
 ENTRYPOINT ["docker-entrypoint.sh"]
 USER elastico
